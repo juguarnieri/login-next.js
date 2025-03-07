@@ -1,0 +1,96 @@
+.button, .signup {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #3d3d77;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+.button:hover, .signup:hover {
+    background: #292256;
+    transform: scale(1.05);
+}
+
+.signupSection { 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap; 
+}
+
+.signupText {
+    font-size: 1rem;
+    color: #292256;
+    margin-right: 10px;
+    white-space: nowrap; 
+}
+
+.signup {
+    width: auto;
+    padding: 5px 15px;
+    margin: 0;
+    border: 2px solid #292256;
+    background: transparent;
+    color: #292256;
+    cursor: pointer; 
+}
+
+.signup:hover {
+    background: #292256;
+    color: white;
+}
+
+
+@media (max-width: 425px) {
+    .signupSection {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .signupText {
+        font-size: 0.9rem;
+        color: #3d3d77;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .signup {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: none;
+        background: #292256;
+        color: white;
+        font-size: 16px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 1024px) {
+    .button, .signup {
+        width: 90%;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .signupSection {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
