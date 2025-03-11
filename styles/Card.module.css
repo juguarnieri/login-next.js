@@ -1,4 +1,4 @@
-.card {
+.card { 
     background-color: #3f3c8cd7;
     display: flex;
     flex-direction: column;
@@ -30,29 +30,23 @@
     max-width: 95%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .card {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
         padding: 1.5rem;
     }
 
     .card h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .card p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 800px) {
     .card {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        padding: 1rem;
+        padding: 1.2rem;
     }
 
     .card h1 {
@@ -60,6 +54,62 @@
     }
 
     .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .card {
+        padding: 1rem;
+    }
+
+    .card h1 {
         font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .card {
+        padding: 0.8rem;
+    }
+
+    .card h1 {
+        font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-height: 600px) {
+    .card {
+        padding: 1rem;
+    }
+
+    .card h1 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-height: 400px) {
+    .card {
+        padding: 0.8rem;
+    }
+
+    .card h1 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
     }
 }

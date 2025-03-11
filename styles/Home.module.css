@@ -1,8 +1,8 @@
-.container { 
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* Ajuste para garantir que o conteúdo não seja cortado */
     background: linear-gradient(135deg, #120e2b, #6957cf, #2e2c6b);
     padding: 0 10px;
 }
@@ -12,7 +12,7 @@
     flex-direction: row;
     width: 100%;
     max-width: 900px;
-    height: 65vh;
+    min-height: 65vh; /* Use min-height para garantir que a altura mínima seja respeitada */
     background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     overflow: hidden;
@@ -146,7 +146,7 @@
 
     .imageSection {
         width: 50%;
-        height: 100%; 
+        height: auto; /* Use height:auto para a imagem ajustar conforme o conteúdo */
     }
 
     .loginSection {

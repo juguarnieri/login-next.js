@@ -1,8 +1,8 @@
-.container { 
+.container {  
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #120e2b, #6957cf, #2e2c6b);
     padding: 20px;
 }
@@ -135,14 +135,15 @@
 
 @media (max-width: 425px) {
     .container {
-        height: auto;
+        min-height: auto; 
         padding: 10px;
     }
 
     .profileCard {
         flex-direction: column;
         padding: 15px;
-        background: none; 
+        background: none;
+        min-height: auto; 
     }
 
     .leftSection, .rightSection {
