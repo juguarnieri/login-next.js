@@ -188,6 +188,10 @@
 
 @media (min-width: 426px) and (max-width: 1024px) {
     .profileCard {
+       min-height: 90%;
+
+    }
+    .profileCard {
         flex-direction: row;
         padding: 15px;
     }
