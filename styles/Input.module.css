@@ -19,8 +19,8 @@
 
 @media (max-width: 425px) {
     .input {
-        width: 35vh; 
-        min-width: 280px;
+        width: 5vh; 
+        max-width: 280px;
         height: 4vh; 
         font-size: 14px; 
     }

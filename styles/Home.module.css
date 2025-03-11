@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ajuste para garantir que o conteúdo não seja cortado */
+    min-height: 100vh; 
     background: linear-gradient(135deg, #120e2b, #6957cf, #2e2c6b);
     padding: 0 10px;
 }
@@ -12,7 +12,7 @@
     flex-direction: row;
     width: 100%;
     max-width: 900px;
-    min-height: 65vh; /* Use min-height para garantir que a altura mínima seja respeitada */
+    min-height: 65vh; 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     overflow: hidden;
@@ -116,24 +116,36 @@
         padding: 10px;
     }
 
-    .card {
+    .cardImg {
         flex-direction: column;
+        max-width: 90%;
+    }
+
+    .imageSection {
+        height: 180px; 
+        flex: none;
     }
 
     .loginSection {
         width: 100%;
-        padding: 1rem;
+        display: flex;
+        padding: 1.5rem;
+        border-radius: 0 0 12px 12px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     .button {
-        width: 80%;
-        height: 5vh;
+        width: 100%;
+        height: 45px;
     }
 
     .signupSection {
         flex-direction: column;
     }
 }
+
 
 @media (min-width: 426px) and (max-width: 1024px) {
     .container {
@@ -146,7 +158,7 @@
 
     .imageSection {
         width: 50%;
-        height: auto; /* Use height:auto para a imagem ajustar conforme o conteúdo */
+        height: auto; 
     }
 
     .loginSection {
@@ -158,8 +170,4 @@
         height: 3vh;
     }
 
-    .button {
-        width: 75%;
-        height: 5vh;
-    }
 }

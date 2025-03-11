@@ -1,6 +1,5 @@
 .button, .signup {
     width: 100%;
-    max-width: 300px;
     font-size: 1rem;
     padding: 12px;
     margin-top: 10px;
@@ -84,7 +83,6 @@
 
 @media (max-width: 1024px) {
     .button, .signup {
-        width: 100%; 
         padding: 10px;
         font-size: 18px;
     }
