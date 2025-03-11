@@ -188,7 +188,7 @@
 
 @media (min-width: 426px) and (max-width: 1024px) {
     .profileCard {
-       min-height: 90%;
+       max-height: 90%;
 
     }
     .profileCard {
