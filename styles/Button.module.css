@@ -1,4 +1,4 @@
-.button, .signup {
+.button {
     width: 100%;
     font-size: 1rem;
     padding: 12px;
@@ -12,103 +12,42 @@
     text-align: center;
 }
 
-.button:hover, .signup:hover {
+.button:hover {
     background: #292256;
     transform: scale(1.05);
 }
 
-.signupSection { 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    margin-top: 10px;
-    flex-wrap: wrap; 
+/* Estilo para variantes */
+.primary {
+    background: #3d3d77;
+    color: white;
 }
 
-.signupText {
-    font-size: 1rem;
-    color: #292256;
-    margin-right: 10px;
-    white-space: nowrap; 
+.primary:hover {
+    background: #292256;
 }
 
-.signup {
-    width: auto;
-    padding: 5px 15px;
-    margin: 0;
-    border: 2px solid #292256;
+.secondary {
     background: transparent;
+    border: 2px solid #292256;
     color: #292256;
-    cursor: pointer; 
 }
 
-.signup:hover {
+.secondary:hover {
     background: #292256;
     color: white;
 }
 
 @media (max-width: 425px) {
-    .signupSection {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .signupText {
-        font-size: 0.9rem;
-        color: #3d3d77;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .signup {
-        width: 100%; 
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: none;
-        background: #292256;
-        color: white;
-        font-size: 16px; 
-    }
-
     .button {
-        width: 100%;
         padding: 12px;
-        margin-top: 15px;
-        font-size: 18px; 
-    }
-}
-
-@media (max-width: 1024px) {
-    .button, .signup {
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    .signupSection {
-        flex-direction: row;
-        gap: 20px;
+        font-size: 16px;
     }
 }
 
 @media (max-height: 600px) {
-    .cardImg {
-        min-height: 70vh; 
-    }
-    .inputGroup input, .button, .signup {
+    .button {
         font-size: 0.9rem;
         padding: 8px;
-    }
-}
-
-@media (max-height: 400px) {
-    .cardImg {
-        min-height: 70vh; 
-    }
-    .inputGroup input, .button, .signup {
-        font-size: 0.8rem;
-        padding: 6px;
     }
 }
