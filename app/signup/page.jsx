@@ -1,51 +1,48 @@
-"use client"; // Instrução para indicar que o código é para ser executado no cliente 
-
+"use client"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "../signup/signup.css";
 import Input from "../../componentes/Input";
-import "../signup/error.css"; // CSS para erros
+import "../signup/error.css";
 import Button from "../../componentes/Button";
 
 export default function Signup() {
     const router = useRouter();
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [passwordError, setPasswordError] = useState(""); // Mensagem de erro da senha
-    const [confirmPasswordError, setConfirmPasswordError] = useState(""); // Mensagem de erro da confirmação
-    const [successMessage, setSuccessMessage] = useState(""); // Mensagem de sucesso
-    const [emailError, setEmailError] = useState(""); // Mensagem de erro do email
+    const [passwordError, setPasswordError] = useState("");
+    const [confirmPasswordError, setConfirmPasswordError] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
+    const [emailError, setEmailError] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // Função para validar a senha
     const validatePassword = (password) => {
         const hasNumber = /\d/.test(password);
         const hasUpperCase = /[A-Z]/.test(password);
-    
+
         if (password.length === 0) {
-            setPasswordError(""); // Limpar erro se a senha estiver vazia
-            setSuccessMessage(""); // Limpar mensagem de sucesso se a senha estiver vazia
+            setPasswordError("");
+            setSuccessMessage("");
         } else if (password.length < 6) {
             setPasswordError("A senha deve ter pelo menos 6 caracteres.");
-            setSuccessMessage(""); // Limpar mensagem de sucesso se a senha for inválida
+            setSuccessMessage("");
         } else if (password.length > 12) {
             setPasswordError("A senha deve ter no máximo 12 caracteres.");
-            setSuccessMessage(""); // Limpar mensagem de sucesso se a senha for inválida
+            setSuccessMessage("");
         } else if (!hasNumber) {
             setPasswordError("A senha deve conter pelo menos um número.");
-            setSuccessMessage(""); // Limpar mensagem de sucesso se a senha for inválida
+            setSuccessMessage("");
         } else if (!hasUpperCase) {
             setPasswordError("A senha deve conter pelo menos uma letra maiúscula.");
-            setSuccessMessage(""); // Limpar mensagem de sucesso se a senha for inválida
+            setSuccessMessage("");
         } else {
-            setPasswordError(""); // Limpar erro se a senha for válida
-            setSuccessMessage("Senha válida!"); // Mensagem de sucesso
+            setPasswordError("");
+            setSuccessMessage("Senha válida!");
         }
     };
-    
-    // Função para validar o email
+
     const validateEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailRegex.test(email)) {
@@ -55,7 +52,6 @@ export default function Signup() {
         }
     };
 
-    // Função para validar se as senhas coincidem
     const validateConfirmPassword = (confirmPassword) => {
         if (password !== confirmPassword) {
             setConfirmPasswordError("As senhas não coincidem.");
@@ -67,10 +63,8 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validação das senhas e do email
-        if (passwordError || confirmPasswordError || emailError) return; // Não permite continuar se houver erro
+        if (passwordError || confirmPasswordError || emailError) return;
 
-        // Se as senhas não coincidirem
         if (password !== confirmPassword) {
             setConfirmPasswordError("As senhas não coincidem.");
             return;
@@ -78,10 +72,8 @@ export default function Signup() {
 
         try {
             setLoading(true);
-            // Simulando o envio do cadastro sem Firebase
             console.log("Usuário cadastrado:", { email, username, password });
 
-            // Se tudo estiver correto, redireciona para o perfil
             router.push("/profile");
         } catch (error) {
             setLoading(false);
@@ -105,7 +97,7 @@ export default function Signup() {
                                 text="Digite seu nome de usuário" 
                                 value={username} 
                                 onChange={(e) => setUsername(e.target.value)} 
-                                autoComplete="off" // Desativa o preenchimento automático
+                                autoComplete="off"
                             />
                         </div>
 
@@ -117,11 +109,11 @@ export default function Signup() {
                                 value={email} 
                                 onChange={(e) => {
                                     setEmail(e.target.value);
-                                    validateEmail(e.target.value); // Valida o email enquanto o usuário digita
+                                    validateEmail(e.target.value);
                                 }} 
-                                autoComplete="off" // Desativa o preenchimento automático
+                                autoComplete="off" 
                             />
-                            {emailError && <p className="error">{emailError}</p>} {/* Exibe erro do email */}
+                            {emailError && <p className="error">{emailError}</p>}
                         </div>
 
                         <div className="inputGroup">
@@ -133,12 +125,12 @@ export default function Signup() {
                                 value={password} 
                                 onChange={(e) => {
                                     setPassword(e.target.value);
-                                    validatePassword(e.target.value); // Valida a senha enquanto o usuário digita
+                                    validatePassword(e.target.value);
                                 }} 
-                                autoComplete="off" // Desativa o preenchimento automático
+                                autoComplete="off"
                             />
-                            {passwordError && <p className="error">{passwordError}</p>} {/* Exibe erro da senha */}
-                            {successMessage && <p className="success">{successMessage}</p>} {/* Mensagem de sucesso */}
+                            {passwordError && <p className="error">{passwordError}</p>}
+                            {successMessage && <p className="success">{successMessage}</p>}
                         </div>
 
                         <div className="inputGroup">
@@ -150,11 +142,11 @@ export default function Signup() {
                                 value={confirmPassword} 
                                 onChange={(e) => {
                                     setConfirmPassword(e.target.value);
-                                    validateConfirmPassword(e.target.value); // Valida se as senhas coincidem
+                                    validateConfirmPassword(e.target.value);
                                 }} 
-                                autoComplete="off" // Desativa o preenchimento automático
+                                autoComplete="off"
                             />
-                            {confirmPasswordError && <p className="error">{confirmPasswordError}</p>} {/* Exibe erro caso as senhas não coincidam */}
+                            {confirmPasswordError && <p className="error">{confirmPasswordError}</p>}
                         </div>
 
                         <Button text={loading ? "Carregando..." : "Cadastre-se"} variant="primary" type="submit" disabled={loading} />

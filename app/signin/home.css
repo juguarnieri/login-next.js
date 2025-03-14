@@ -24,6 +24,21 @@
     background: url('/image.png') center/cover no-repeat;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
+.signupSection {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+.signupText {
+    margin: 0; 
+}
+
+.signupSection button {
+    width: auto; 
+    padding: 5px 10px;
+}
 
 .loginSection {
     flex: 1;
