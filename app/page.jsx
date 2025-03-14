@@ -1,8 +1,7 @@
-// app/page.jsx
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import "./loading.css"; // Importa o arquivo de estilos
+import "./loading.css"; 
 
 export default function Home() {
   const router = useRouter();

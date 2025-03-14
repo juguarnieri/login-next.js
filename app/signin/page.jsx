@@ -46,7 +46,7 @@ export default function Home() {
 
                     <div className="signupSection">
                         <p className="signupText">Não tem uma conta?</p>
-                        <Button text="Sign Up" onClick={() => router.push("/cadastro")} variant="secondary" />
+                        <Button text="Sign Up" onClick={() => router.push("/signup")} variant="secondary" />
                     </div>
                 </div>
             </div>

@@ -41,3 +41,25 @@
         height: 2vh; 
     }
 }
+
+
+.error {
+    border: 1px solid red;
+}
+
+.success {
+    border: 1px solid green;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.successMessage {
+    color: green;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
