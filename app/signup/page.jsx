@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "../signup/signup.css";
@@ -63,17 +63,13 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (passwordError || confirmPasswordError || emailError) return;
-
-        if (password !== confirmPassword) {
-            setConfirmPasswordError("As senhas não coincidem.");
+        if (passwordError || confirmPasswordError || emailError || !email || !username || !password || !confirmPassword) {
             return;
         }
 
         try {
             setLoading(true);
             console.log("Usuário cadastrado:", { email, username, password });
-
             router.push("/profile");
         } catch (error) {
             setLoading(false);
@@ -92,41 +88,44 @@ export default function Signup() {
                     <form onSubmit={handleSubmit}>
                         <div className="inputGroup">
                             <label className="label">Nome de Usuário</label>
-                            <Input 
-                                tipo="text" 
-                                text="Digite seu nome de usuário" 
-                                value={username} 
-                                onChange={(e) => setUsername(e.target.value)} 
+                            <Input
+                                tipo="text"
+                                text="Digite seu nome de usuário"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                                 autoComplete="off"
                             />
                         </div>
 
                         <div className="inputGroup">
                             <label className="label">Email</label>
-                            <Input 
-                                tipo="email" 
-                                text="Digite seu e-mail" 
-                                value={email} 
+                            <Input
+                                tipo="email"
+                                text="Digite seu e-mail"
+                                value={email}
                                 onChange={(e) => {
                                     setEmail(e.target.value);
                                     validateEmail(e.target.value);
-                                }} 
-                                autoComplete="off" 
+                                    if (e.target.value === "") setEmailError("");
+                                }}
+                                autoComplete="off"
                             />
                             {emailError && <p className="error">{emailError}</p>}
                         </div>
 
                         <div className="inputGroup">
                             <label className="label">Senha</label>
-                            <Input 
-                                id="password" 
-                                tipo="password" 
-                                text="Digite sua senha" 
-                                value={password} 
+                            <Input
+                                id="password"
+                                tipo="password"
+                                text="Digite sua senha"
+                                value={password}
                                 onChange={(e) => {
                                     setPassword(e.target.value);
                                     validatePassword(e.target.value);
-                                }} 
+                                    if (e.target.value === "") setPasswordError("");
+                                    if (e.target.value === "") setSuccessMessage("");
+                                }}
                                 autoComplete="off"
                             />
                             {passwordError && <p className="error">{passwordError}</p>}
@@ -135,25 +134,34 @@ export default function Signup() {
 
                         <div className="inputGroup">
                             <label className="label">Confirmar Senha</label>
-                            <Input 
-                                id="confirmPass" 
-                                tipo="password" 
-                                text="Confirme sua senha" 
-                                value={confirmPassword} 
+                            <Input
+                                id="confirmPass"
+                                tipo="password"
+                                text="Confirme sua senha"
+                                value={confirmPassword}
                                 onChange={(e) => {
                                     setConfirmPassword(e.target.value);
                                     validateConfirmPassword(e.target.value);
-                                }} 
+                                    if (e.target.value === "") setConfirmPasswordError("");
+                                }}
                                 autoComplete="off"
                             />
                             {confirmPasswordError && <p className="error">{confirmPasswordError}</p>}
                         </div>
 
-                        <Button text={loading ? "Carregando..." : "Cadastre-se"} variant="primary" type="submit" disabled={loading} />
+                        <Button
+                            text="Cadastre-se!"
+                            onClick={handleSubmit}
+                            variant="primary"
+                        />
 
                         <div className="signupSection">
-                            <p className="signupText">Já tem uma conta?</p>
-                            <Button text="Faça login" onClick={() => router.push("/signin")} variant="secondary" />
+                            <p className="signupText">Não tem uma conta?</p>
+                            <Button
+                                text="Signin"
+                                onClick={() => router.push("/signin")}
+                                variant="secondary"
+                            />
                         </div>
                     </form>
                 </div>

@@ -1,12 +1,12 @@
-.container {  
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; 
     background: linear-gradient(135deg, #120e2b, #6957cf, #2e2c6b);
     padding: 0 10px;
-    box-sizing: border-box;
 }
+
 
 .cardImg {
     display: flex;
@@ -55,13 +55,11 @@
     color: #1a1a40;
     margin-bottom: 5px;
 }
-
 .signupSection {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    flex-wrap: wrap;
 }
 
 .signupText {
@@ -77,7 +75,6 @@
     border: 2px solid #292256;
     background: transparent;
     color: #292256;
-    cursor: pointer;
 }
 
 .signup:hover {
