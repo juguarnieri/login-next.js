@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { FaCalendarAlt, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import "../profile/profile.css"
-// Aqui assumimos que Card e Button são componentes separados e importados corretamente
+import { SiHtml5, SiCss3, SiReact, SiPostgresql } from "react-icons/si";
 import Button from '../../componentes/Button'; 
 import Card from '../../componentes/Card';
 
@@ -50,7 +50,14 @@ export default function Profile() {
                         <Card title="Experiência" text="Desenvolvedora Full Stack, apaixonada em tecnologia." />
                     </div>
                     <div className="cardRow">
-                        <Card title="Habilidades" text="React, Next.js, Node.js, JavaScript." />
+                        <Card title="Habilidades" text={
+                            <div className="skillsContainer" style={{ display: 'flex', gap: '10px' }}>
+                                <SiHtml5 className="icon" style={{ color: 'white' }} />
+                                <SiCss3 className="icon" style={{ color: 'white' }} />
+                                <SiReact className="icon" style={{ color: 'white' }} />
+                                <SiPostgresql className="icon" style={{ color: 'white' }} />
+                            </div>
+                        } />
                     </div>
                     <div className="cardRow">
                         <Card title="Hobbies" text="Gosto de brincar com as minhas cachorras, assistir jogos de futebol e investigar casos criminais!" />
