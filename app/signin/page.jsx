@@ -29,19 +29,33 @@ export default function Home() {
 
           <div className="socialmedia">
             <div className="media">
-              <i className="fab fa-google"></i>
+              <a
+                href="https://accounts.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/google1.png" alt="Google" />
+              </a>
             </div>
             <div className="media">
-              <i className="fab fa-apple"></i>
+              <a
+                href="https://www.apple.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/apple.png" alt="Apple" />
+              </a>
             </div>
             <div className="media">
-              <i className="fab fa-facebook"></i>
-            </div>
-            <div className="media">
-              <i className="fab fa-instagram"></i>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/facebook1.png" alt="Facebook" />
+              </a>
             </div>
           </div>
-
           <Button
             text="Entre no seu perfil!"
             onClick={() => router.push("/profile")}

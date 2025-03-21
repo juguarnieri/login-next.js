@@ -55,17 +55,31 @@
     color: #1a1a40;
     margin-bottom: 5px;
 }
-.signupSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
 
 .signupText {
     font-size: 1rem;
     color: #3d3d77;
-    margin-right: 10px;
+    flex: 1; 
+    text-align: left; 
+}
+.signup {
+    width: auto;
+    padding: 5px 15px;
+    margin: 0;
+    border: 2px solid #292256;
+    background: transparent;
+    color: #292256;
+}
+
+.signup:hover {
+    background: #292256;
+    color: white;
+}
+
+.signup button {
+    flex: 1; 
+    text-align: right; 
+    max-width: 120px;
 }
 
 .signup {
@@ -200,10 +214,7 @@
         width: 70%;
     }
 
-    .signup {
-        width: auto;
-        font-size: 16px;
-    }
+
 }
 
 @media (max-width: 320px) {
