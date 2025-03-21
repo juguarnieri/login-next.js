@@ -227,3 +227,12 @@
     }
 }
 
+.skillsContainer {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
